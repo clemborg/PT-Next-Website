@@ -50,8 +50,8 @@ export function Nav({ locale, active, pageKey }: { locale: Locale; active: PageK
           aria-label="PT Next home"
           style={{ display: 'flex', alignItems: 'center', flexShrink: 0, textDecoration: 'none' }}
         >
-          <img src="/images/ptnext-logo-dark.png" alt="PT Next" className="logo-dark" style={{ height: 22, display: 'block' }} />
-          <img src="/images/ptnext-logo-light.png" alt="PT Next" className="logo-light" style={{ height: 22, display: 'block' }} />
+          <img src="/images/ptnext-logo-dark.png" alt="PT Next" className="logo-dark" style={{ height: 22, width: 'auto' }} />
+          <img src="/images/ptnext-logo-light.png" alt="" className="logo-light" aria-hidden style={{ height: 22, width: 'auto' }} />
         </a>
         <nav
           className="site-nav"
