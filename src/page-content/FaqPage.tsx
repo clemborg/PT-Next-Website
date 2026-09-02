@@ -11,7 +11,7 @@ function FaqSummary({ title }: { title: string }) {
   return (
     <summary style={{ padding: '32px 0', display: 'flex', gap: 14, alignItems: 'baseline' }}>
       <span style={{ width: 6, height: 6, background: 'var(--orange)', flex: '0 0 auto', marginBottom: 2 }} />
-      <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontWeight: 600, fontSize: 26, lineHeight: 1.25, flex: 1 }}>{title}</h2>
+      <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontWeight: 500, fontSize: 24, lineHeight: 1.4, flex: 1, color: 'var(--warm)' }}>{title}</h2>
       <span className="faq-plus" style={{ fontSize: 22, color: 'var(--muted-2)', flex: '0 0 auto', lineHeight: 1, fontWeight: 300 }}>+</span>
     </summary>
   );
