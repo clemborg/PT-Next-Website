@@ -1,0 +1,93 @@
+import { tr, type Locale } from '@/lib/translations';
+import { href } from '@/lib/routes';
+import { Nav } from '@/components/Nav';
+import { Footer } from '@/components/Footer';
+
+/* Ported from PT Next Thank You.dc.html — form-success page.
+   noindex + excluded from the sitemap (SEO_AUDIT.md launch checklist). */
+
+export function ThankYouPage({ locale }: { locale: Locale }) {
+  const T = tr(locale);
+  return (
+    <div style={{ background: '#0e0e0f', color: '#faf8f5', fontFamily: 'Inter,sans-serif', fontWeight: 300, minHeight: '100vh' }}>
+      <Nav locale={locale} active="" pageKey="thankyou" />
+
+      <main
+        style={{
+          minHeight: 'calc(100vh - 72px - 130px)', display: 'flex', flexDirection: 'column',
+          alignItems: 'center', justifyContent: 'center', padding: '120px 40px',
+          textAlign: 'center', background: '#0e0e0f',
+        }}
+      >
+        <div style={{ width: 42, height: 1, background: '#E87722', margin: '0 auto 40px' }} />
+
+        <div style={{ fontSize: 11, letterSpacing: '.24em', textTransform: 'uppercase', color: '#8f897f', marginBottom: 28 }}>
+          {T('Message received')}
+        </div>
+
+        <h1
+          style={{
+            fontFamily: "'Cormorant Garamond',serif", fontWeight: 300, fontSize: 64, lineHeight: 1.05,
+            letterSpacing: '-0.01em', maxWidth: 720, margin: 0, textWrap: 'pretty',
+          }}
+        >
+          {T("Thank you. We'll be in touch shortly.")}
+        </h1>
+
+        <p style={{ fontSize: 17, color: '#a29d94', lineHeight: 1.7, maxWidth: 520, margin: '32px auto 0', fontWeight: 300 }}>
+          {T('Someone from PT Next will reach out within one business day to arrange a call and understand the room you have in mind.')}
+        </p>
+
+        <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap', marginTop: 56 }}>
+          <a
+            href={href(locale, 'home')}
+            className="f-white2"
+            style={{
+              fontSize: 14, color: '#0e0e0f', background: '#E87722', padding: '14px 28px',
+              letterSpacing: '.02em', fontWeight: 500, borderRadius: 1, textDecoration: 'none', whiteSpace: 'nowrap',
+            }}
+          >
+            {T('Return home')}
+          </a>
+          <a
+            href={href(locale, 'proof')}
+            className="f-orange2 h-orange-border"
+            style={{
+              fontSize: 14, color: '#faf8f5', border: '1px solid #4a4843', padding: '14px 28px',
+              letterSpacing: '.02em', fontWeight: 400, borderRadius: 1, textDecoration: 'none', whiteSpace: 'nowrap',
+            }}
+          >
+            {T('Read the case study')}
+          </a>
+        </div>
+
+        <div style={{ marginTop: 88, paddingTop: 32, borderTop: '1px solid #1e1e21', maxWidth: 520, width: '100%' }}>
+          <div style={{ fontSize: 11, letterSpacing: '.16em', textTransform: 'uppercase', color: '#6b665e', marginBottom: 14 }}>
+            {T('In the meantime')}
+          </div>
+          <div style={{ fontSize: 14, color: '#a29d94', lineHeight: 1.7 }}>
+            {T('Reach us directly at')}{' '}
+            <a
+              href="mailto:info@ptnext.com"
+              className="h-orange-border"
+              style={{ color: '#faf8f5', textDecoration: 'none', borderBottom: '1px solid #4a4843', paddingBottom: 1 }}
+            >
+              info@ptnext.com
+            </a>{' '}
+            {T('or')}{' '}
+            <a
+              href="tel:+12015995000"
+              className="h-orange-border"
+              style={{ color: '#faf8f5', textDecoration: 'none', borderBottom: '1px solid #4a4843', paddingBottom: 1 }}
+            >
+              +1 201 599 5000
+            </a>
+            .
+          </div>
+        </div>
+      </main>
+
+      <Footer locale={locale} />
+    </div>
+  );
+}

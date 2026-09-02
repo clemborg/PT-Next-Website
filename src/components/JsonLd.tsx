@@ -1,0 +1,79 @@
+import { SITE_ORIGIN } from '@/lib/routes';
+
+/*
+ * Organization + SoftwareApplication JSON-LD from the handoff package
+ * (structured-data.jsonld), shipped on Home and Platform in both languages.
+ *
+ * Resolved from the package's TODOs:
+ * - logo: points at the shipped 512×512 favicon monogram (a real URL).
+ *   Swap for a proper square logo asset when one exists.
+ * - founder: OMITTED pending confirmation (the package TODO asks to verify
+ *   whether Eric Zuckerman is the primary founder before publishing).
+ */
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${SITE_ORIGIN}/#organization`,
+      name: 'PT Next',
+      legalName: 'PT Next',
+      url: `${SITE_ORIGIN}/`,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_ORIGIN}/favicon-512.png`,
+      },
+      description:
+        'PT Next is the software company behind Argos, a platform for real-time inventory and presentation intelligence in high jewelry boutiques and events.',
+      email: 'info@ptnext.com',
+      telephone: '+1-201-599-5000',
+      parentOrganization: {
+        '@type': 'Organization',
+        name: 'Pac Team Group',
+        description: '75+ years in luxury display, packaging, and events.',
+      },
+      sameAs: ['https://www.linkedin.com/company/pt-next'],
+      employee: [
+        { '@type': 'Person', name: 'Eric Zuckerman', jobTitle: 'CEO' },
+        { '@type': 'Person', name: 'Pete Shoemaker', jobTitle: 'Director of Engineering' },
+        { '@type': 'Person', name: 'Danny Merando', jobTitle: 'Software Engineer' },
+        { '@type': 'Person', name: 'Clemente Borgogni', jobTitle: 'Program Manager' },
+      ],
+      makesOffer: {
+        '@type': 'Offer',
+        itemOffered: { '@id': `${SITE_ORIGIN}/#argos` },
+      },
+    },
+    {
+      '@type': 'SoftwareApplication',
+      '@id': `${SITE_ORIGIN}/#argos`,
+      name: 'Argos',
+      applicationCategory: 'BusinessApplication',
+      applicationSubCategory: 'Inventory and Presentation Intelligence Platform',
+      operatingSystem: 'Web-based',
+      url: `${SITE_ORIGIN}/platform`,
+      description:
+        'Argos gives high jewelry maisons real-time certainty over thousands of pieces, and turns every client presentation into measurable data. One continuous view of the boutique floor: passive tracking, runner optimization, operational integrity, and conversion intelligence.',
+      featureList: [
+        'Passive RFID tracking of thousands of pieces across storage and display',
+        'Runner optimization — real-time piece location for staff during client presentations',
+        'Operational integrity — supplies tracking, automated reorders, digital case counts',
+        'Presentation and conversion intelligence for HQ data teams',
+      ],
+      audience: {
+        '@type': 'BusinessAudience',
+        audienceType: 'High jewelry maisons, luxury boutiques, and high jewelry events',
+      },
+      provider: { '@id': `${SITE_ORIGIN}/#organization` },
+    },
+  ],
+};
+
+export function JsonLd() {
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+    />
+  );
+}

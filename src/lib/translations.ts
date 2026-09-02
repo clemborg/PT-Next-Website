@@ -1,0 +1,330 @@
+/*
+ * PT Next EN -> FR dictionary, ported verbatim from the handoff package's
+ * translations.js (authoritative copy source — native-quality pass already
+ * done; do not re-translate). Keys are exact trimmed English strings.
+ *
+ * Unlike the prototype (runtime DOM text-swap), this dictionary is applied
+ * at build time: components author copy as the exact English strings and
+ * call t(locale, s); French pages are statically generated from it.
+ */
+
+export type Locale = 'en' | 'fr';
+
+const dict: Record<string, string> = {
+  /* ===== NAV ===== */
+  "Platform": "Plateforme",
+  "Deployments": "Déploiements",
+  "Use Cases": "Cas d'usage",
+  "How it works": "Fonctionnement",
+  "Proof": "Preuves",
+  "Company": "Société",
+  "Request a pilot": "Demander un pilote",
+
+  /* ===== FOOTER ===== */
+  "© 2026 PT Next, a Pac Team Group company": "© 2026 PT Next, une société du groupe Pac Team",
+
+  /* ===== CONTACT FORM ===== */
+  "Name": "Nom",
+  "Email": "E-mail",
+  "Tell us about your boutique or event": "Parlez-nous de votre boutique ou de votre événement",
+  "Start a conversation.": "Engageons la conversation.",
+  "Tell us about your boutique or upcoming event.": "Parlez-nous de votre boutique ou de votre prochain événement.",
+  "See Argos on your own floor plan.": "Voyez Argos sur votre propre plan de boutique.",
+  "See what this looks like on your floor.": "Voyez ce que cela donne dans votre boutique.",
+  "Find the right starting point for your team.": "Trouvez le bon point de départ pour votre équipe.",
+  "Find the right starting point for your operation.": "Trouvez le bon point de départ pour votre activité.",
+  "Ready when you are.": "Prêts quand vous l'êtes.",
+  "Tell us which path fits your next event or boutique.": "Dites-nous quelle approche convient à votre prochain événement ou à votre boutique.",
+  "Start with a single event, or a 3-month boutique pilot.": "Commencez par un événement unique ou un pilote boutique de 3 mois.",
+  "Read the case study": "Lire l'étude de cas",
+  "Read the case study →": "Lire l'étude de cas →",
+  "See it in a real boutique": "Le voir dans une vraie boutique",
+  "Explore the platform": "Explorer la plateforme",
+  "See how a pilot works": "Voir comment se déroule un pilote",
+  "See what Argos measures": "Voir ce qu'Argos mesure",
+
+  /* ===== SHARED ===== */
+  "Backed by Pac Team Group": "Soutenu par Pac Team Group",
+  "75+ years in luxury": "Plus de 75 ans dans le luxe",
+  "Learn more →": "En savoir plus →",
+  "What it replaces": "Ce que cela remplace",
+  "The differentiator": "Ce qui fait la différence",
+
+  /* ===== HOME ===== */
+  "Every piece accounted for. Every presentation measured.": "Chaque pièce comptabilisée. Chaque présentation mesurée.",
+  "Argos gives high jewelry maisons real-time certainty over thousands of pieces, and turns each client presentation into data you can act on.": "Argos offre aux maisons de haute joaillerie une certitude en temps réel sur des milliers de pièces, et transforme chaque présentation client en données exploitables.",
+  "See Argos in action": "Voir Argos en action",
+  "\"Weekly counts went from a full day to about an hour.\"": "« Les inventaires hebdomadaires sont passés d'une journée entière à environ une heure. »",
+  "Inventory Manager, Hamilton Jewelers": "Responsable des stocks, Hamilton Jewelers",
+  "1 hr": "1 h",
+  "full weekly count, down from a day": "inventaire hebdomadaire complet, contre une journée auparavant",
+  "Top maisons": "Grandes maisons",
+  "Trusted by the world's leading jewelry houses": "La confiance des plus grandes maisons de joaillerie",
+  "What Argos does": "Ce que fait Argos",
+  "Four capabilities, one continuous view of the boutique floor.": "Quatre capacités, une vue continue de la boutique.",
+  "Passive Tracking": "Suivi passif",
+  "Total visibility of thousands of pieces across storage and display, with no manual intervention.": "Visibilité totale sur des milliers de pièces, du stockage à la vitrine, sans aucune intervention manuelle.",
+  "Runner Optimization": "Optimisation des trajets",
+  "Eliminate the blind search. Direct staff with real-time data so the right piece reaches the client without delay.": "Fini les recherches à l'aveugle. Guidez le personnel avec des données en temps réel pour que la bonne pièce arrive au client sans délai.",
+  "Operational Integrity": "Intégrité opérationnelle",
+  "Supplies and consumables tracking, automated reorders, and digital case counts.": "Suivi des fournitures et consommables, réapprovisionnement automatisé et comptages numériques des vitrines.",
+  "Conversion Intelligence": "Intelligence de conversion",
+  "Presentation tracking, product conversion, and in-store engagement metrics for intelligence teams.": "Suivi des présentations, conversion produit et indicateurs d'engagement en boutique pour les équipes d'analyse.",
+  "Why it matters": "Pourquoi c'est important",
+  "Immediate product retrieval": "Récupération immédiate des pièces",
+  "Every piece reaches the client table without a back-room search.": "Chaque pièce arrive à la table du client sans recherche en réserve.",
+  "Real-time discrepancy flags": "Écarts signalés en temps réel",
+  "Catch a missing or misplaced piece as it moves, not at the next count.": "Repérez une pièce manquante ou égarée dès qu'elle bouge, pas au prochain inventaire.",
+  "Total inventory awareness": "Connaissance totale des stocks",
+  "Know the exact location and status of every piece, at all times.": "Connaissez l'emplacement exact et le statut de chaque pièce, à tout moment.",
+  "Customer behavior insights": "Comportement client décrypté",
+  "See which pieces get presented, engaged with, and converted.": "Voyez quelles pièces sont présentées, suscitent l'intérêt et se vendent.",
+  "Built for boutique staff": "Conçu pour les équipes en boutique",
+  "Tools that help staff do their jobs, not more for them to manage.": "Des outils qui aident le personnel, sans rien ajouter à gérer.",
+  "Two ways to start.": "Deux façons de commencer.",
+  "Start with an event": "Commencer par un événement",
+  "High Jewelry Event Pilot": "Pilote événement haute joaillerie",
+  "Trial Argos during a single, time-contained event. Real-time visibility and presentation tracking, zero long-term commitment.": "Testez Argos lors d'un événement unique et limité dans le temps. Visibilité en temps réel et suivi des présentations, sans engagement à long terme.",
+  "How it works →": "Fonctionnement →",
+  "Start with a boutique": "Commencer par une boutique",
+  "3-Month Boutique Pilot": "Pilote boutique de 3 mois",
+  "A low-friction pilot in one boutique. Validate staff time savings and ROI over 90 days before scaling.": "Un pilote sans friction dans une seule boutique. Validez le gain de temps et le retour sur investissement sur 90 jours avant de déployer plus largement.",
+
+  /* ===== PLATFORM ===== */
+  "The platform": "La plateforme",
+  "Argos. One continuous view of the boutique floor.": "Argos. Une vue continue de la boutique.",
+  "Real-time certainty over every piece, from the safe to the client table, and physical presentations turned into measurable data, for the first time.": "Une certitude en temps réel sur chaque pièce, du coffre à la table du client, et des présentations physiques transformées en données mesurables, pour la première fois.",
+  "Talk to us": "Parlons-en",
+  "Manual spot-checks and spreadsheets that go stale the moment a piece moves.": "Des vérifications manuelles et des tableurs obsolètes dès qu'une pièce bouge.",
+  "Eliminate the blind search. Direct staff with real-time data so the right piece reaches the client presentation without delay.": "Fini les recherches à l'aveugle. Guidez le personnel avec des données en temps réel pour que la bonne pièce arrive à la présentation client sans délai.",
+  "Staff walking the floor and back rooms searching for a piece while a client waits.": "Du personnel qui parcourt la boutique et les réserves à la recherche d'une pièce pendant qu'un client attend.",
+  "Full-day physical counts and someone noticing supplies ran out only after they did.": "Des inventaires physiques d'une journée entière et des fournitures épuisées qu'on ne remarque qu'après coup.",
+  "Presentation and Conversion Intelligence": "Intelligence de présentation et de conversion",
+  "Presentation tracking, product conversion, and in-store engagement metrics for intelligence teams. This is what happens after the piece leaves the case, measured for the first time.": "Suivi des présentations, conversion produit et indicateurs d'engagement en boutique pour les équipes d'analyse. Ce qui se passe après que la pièce quitte la vitrine, mesuré pour la première fois.",
+  "Guesswork. No real answer to which presentations convert.": "Des suppositions. Aucune réponse fiable sur les présentations qui convertissent.",
+  "Security and data governance": "Sécurité et gouvernance des données",
+  "Built to survive scrutiny, not just IT review.": "Conçu pour résister aux contrôles les plus stricts, pas seulement à un audit informatique.",
+  "Argos runs inside some of the highest-scrutiny retail environments in the world. Security isn't a layer added on top, it's a condition of being allowed on the floor at all.": "Argos fonctionne dans certains des environnements de vente les plus contrôlés au monde. La sécurité n'est pas une couche ajoutée : c'est la condition même pour être admis en boutique.",
+  "Encryption by default": "Chiffrement par défaut",
+  "Data is encrypted in transit and at rest, with access scoped to what a role actually needs to see.": "Les données sont chiffrées en transit et au repos, avec des accès limités à ce que chaque rôle doit réellement voir.",
+  "Role-based access": "Accès par rôle",
+  "Boutique staff, managers, and HQ each see the slice of the system relevant to their role, nothing more.": "Le personnel de boutique, les managers et le siège voient chacun la partie du système correspondant à leur rôle, rien de plus.",
+  "Data ownership": "Propriété des données",
+  "Your inventory and presentation data belongs to you. PT Next does not sell or share it, full stop.": "Vos données d'inventaire et de présentation vous appartiennent. PT Next ne les vend ni ne les partage, point final.",
+  "What it connects to": "Ce à quoi il se connecte",
+  "Fits the operation you already have.": "S'adapte à votre organisation existante.",
+  "Hardware footprint": "Empreinte matérielle",
+  "Passive RFID tags and readers sized to the case and the room, installed without altering the space clients see.": "Étiquettes RFID passives et lecteurs dimensionnés à la vitrine et à l'espace, installés sans altérer le lieu visible par les clients.",
+  "Network requirements": "Exigences réseau",
+  "Runs on standard Wi-Fi and wired infrastructure most boutiques already have. No proprietary network to stand up.": "Fonctionne sur le Wi-Fi standard et l'infrastructure filaire dont la plupart des boutiques disposent déjà. Aucun réseau propriétaire à déployer.",
+  "POS and ERP compatibility": "Compatibilité caisse et ERP",
+  "Built to sit alongside existing point-of-sale and inventory systems rather than replace them.": "Conçu pour coexister avec vos systèmes de caisse et d'inventaire existants plutôt que de les remplacer.",
+  "Integrations": "Intégrations",
+  "Built to work with what you already run.": "Conçu pour fonctionner avec vos systèmes actuels.",
+  "PT Next has worked directly with clients' IT and software teams on integrations with their existing systems. The right solution depends on your needs and budget; recent examples include:": "PT Next a travaillé directement avec les équipes informatiques de ses clients sur des intégrations avec leurs systèmes existants. La bonne solution dépend de vos besoins et de votre budget ; exemples récents :",
+  "Automated catalog and ERP data sync, so product location and status stay current in Argos.": "Synchronisation automatisée du catalogue et des données ERP, pour que l'emplacement et le statut des produits restent à jour dans Argos.",
+  "Custom RFID tag printing that fits your existing tagging process.": "Impression d'étiquettes RFID sur mesure, adaptée à votre processus d'étiquetage existant.",
+  "Automated discrepancy reporting between RFID counts and ERP records.": "Rapports d'écarts automatisés entre les comptages RFID et les enregistrements ERP.",
+  "API access to real-time and historical RFID read data.": "Accès API aux lectures RFID en temps réel et historiques.",
+
+  /* ===== USE CASES ===== */
+  "Built for everyone standing between the safe and the client.": "Conçu pour tous ceux qui se tiennent entre le coffre et le client.",
+  "Argos serves every role differently, from the floor to headquarters, without asking any of them to work harder.": "Argos sert chaque rôle différemment, de la boutique au siège, sans demander à personne de travailler davantage.",
+  "Sales associate · runner": "Conseiller de vente · runner",
+  "Find any piece instantly.": "Trouvez n'importe quelle pièce instantanément.",
+  "No more walking the back room during a client presentation. Argos knows where every piece is, in real time, so a search never becomes a delay.": "Fini les allers-retours en réserve pendant une présentation client. Argos sait où se trouve chaque pièce, en temps réel, pour qu'une recherche ne devienne jamais une attente.",
+  "Faster presentations, every time →": "Des présentations plus rapides, à chaque fois →",
+  "Boutique manager": "Directeur de boutique",
+  "Counts in an hour, not a day.": "Un inventaire en une heure, pas en une journée.",
+  "Automated, accurate counts free your team for the floor. Shrinkage is visible immediately, not discovered weeks later.": "Des comptages automatisés et précis libèrent votre équipe pour la vente. La démarque est visible immédiatement, pas découverte des semaines plus tard.",
+  "Team efficiency, shrinkage protection →": "Efficacité des équipes, protection contre la démarque →",
+  "HQ · data team": "Siège · équipe data",
+  "Presentation and conversion, across every location.": "Présentations et conversion, sur tous les sites.",
+  "A single, comparable view of what happens in front of the client, from one boutique to the entire portfolio.": "Une vue unique et comparable de ce qui se passe devant le client, d'une boutique à l'ensemble du portefeuille.",
+  "Metrics HQ has never had before →": "Des indicateurs que le siège n'a jamais eus →",
+  "IT · Security": "Informatique · Sécurité",
+  "Deploy without adding risk.": "Déployez sans ajouter de risque.",
+  "Argos runs alongside your existing network and access controls rather than replacing them. Role-based permissions mean staff see only what their role requires.": "Argos fonctionne aux côtés de votre réseau et de vos contrôles d'accès existants plutôt que de les remplacer. Les permissions par rôle garantissent que chacun ne voit que ce que son rôle exige.",
+  "Enterprise-ready by design →": "Pensé pour l'entreprise dès sa conception →",
+
+  /* ===== HOW IT WORKS ===== */
+  "Two ways to start, both simple.": "Deux façons de commencer, toutes deux simples.",
+  "However you begin, someone from PT Next handles the setup. Your team keeps doing what it already does.": "Quel que soit votre point de départ, PT Next s'occupe de l'installation. Votre équipe continue de faire ce qu'elle fait déjà.",
+  "A trial run at a single event you're already planning. We arrive, we set up, you present as usual.": "Un essai lors d'un événement que vous planifiez déjà. Nous arrivons, nous installons, vous présentez comme d'habitude.",
+  "We set up ahead of time": "Nous installons en amont",
+  "Our team gets Argos running before doors open. No change to how pieces are handled or displayed.": "Notre équipe met Argos en service avant l'ouverture. Aucun changement dans la manipulation ou la présentation des pièces.",
+  "You present, as always": "Vous présentez, comme toujours",
+  "Argos runs quietly in the background. Your team focuses on the client, not the technology.": "Argos fonctionne discrètement en arrière-plan. Votre équipe se concentre sur le client, pas sur la technologie.",
+  "We share what we saw": "Nous partageons nos observations",
+  "A short readout after the event: what was shown, for how long, and what it tells you.": "Un compte rendu bref après l'événement : ce qui a été présenté, pendant combien de temps, et ce que cela vous apprend.",
+  "Zero long-term commitment.": "Aucun engagement à long terme.",
+  "Pilot investment scoped after a short call.": "Investissement du pilote défini après un bref échange.",
+  "A longer look, in one location, before any wider decision is made.": "Un essai plus long, sur un seul site, avant toute décision plus large.",
+  "We tag your inventory": "Nous étiquetons votre inventaire",
+  "Done on-site, outside business hours. No disruption to daily service.": "Réalisé sur place, en dehors des heures d'ouverture. Aucune perturbation du service quotidien.",
+  "Your team keeps working": "Votre équipe continue de travailler",
+  "Argos runs alongside existing routines. Nothing new to learn on day one.": "Argos fonctionne aux côtés des routines existantes. Rien de nouveau à apprendre le premier jour.",
+  "We check in along the way": "Nous faisons le point en cours de route",
+  "Light-touch progress conversations, not a burdensome review process.": "Des points d'étape légers, pas un processus d'évaluation contraignant.",
+  "We review results together": "Nous examinons les résultats ensemble",
+  "At 90 days, a clear picture of time saved and what scaling would look like.": "À 90 jours, une image claire du temps gagné et de ce que donnerait un déploiement à plus grande échelle.",
+  "No disruption to daily service.": "Aucune perturbation du service quotidien.",
+
+  /* ===== PROOF ===== */
+  "Trusted inside the world's leading jewelry maisons.": "La confiance des plus grandes maisons de joaillerie au monde.",
+  "A flagship boutique. A global high jewelry events program. Same platform on both floors.": "Une boutique flagship. Un programme mondial d'événements de haute joaillerie. La même plateforme sur les deux terrains.",
+  "Case study: flagship boutique": "Étude de cas : boutique flagship",
+  "White-glove service for every presentation.": "Un service d'exception pour chaque présentation.",
+  "The challenge: inventory control": "Le défi : le contrôle des stocks",
+  "A multi-level flagship holds thousands of pieces across display cases, back-of-house storage, and the vault. When a client asks for a specific piece, it might be out for service, in a photo shoot, or with another advisor. Locating it meant calling around and searching floor by floor while the client waited.": "Un flagship sur plusieurs niveaux abrite des milliers de pièces réparties entre vitrines, réserves et coffre. Quand un client demande une pièce précise, elle peut être en entretien, en séance photo ou avec un autre conseiller. La localiser signifiait passer des appels et fouiller étage par étage pendant que le client attendait.",
+  "The solution: integrated intelligence": "La solution : une intelligence intégrée",
+  "PT Next deployed a unified boutique operations platform for:": "PT Next a déployé une plateforme unifiée d'opérations boutique pour :",
+  "Real-time, passive product tracking": "Suivi passif des produits en temps réel",
+  "Presentation tracking and conversion reporting": "Suivi des présentations et rapports de conversion",
+  "Supplies and consumables tracking for automated reorders": "Suivi des fournitures et consommables pour un réapprovisionnement automatisé",
+  "The impact: a new daily routine": "L'impact : une nouvelle routine quotidienne",
+  "Advisors now check a piece's live location on a phone or computer before leaving the client, and retrieve it directly. Weekly counts that took a full day finish in about an hour. Presentation and conversion data flows to the maison's intelligence team, figures they previously had no way to measure.": "Les conseillers vérifient désormais l'emplacement d'une pièce sur téléphone ou ordinateur avant de quitter le client, puis vont la chercher directement. Les inventaires hebdomadaires qui prenaient une journée entière se terminent en une heure environ. Les données de présentation et de conversion alimentent l'équipe d'analyse de la maison : des chiffres qu'elle n'avait aucun moyen de mesurer auparavant.",
+  "\"The more we can do with Argos, the better.\"": "« Plus nous pouvons en faire avec Argos, mieux c'est. »",
+  "5th Ave Flagship Security Manager": "Responsable sécurité, flagship de la 5e Avenue",
+  "Case study: high jewelry events": "Étude de cas : événements de haute joaillerie",
+  "Real-time visibility for every masterpiece.": "Une visibilité en temps réel pour chaque chef-d'œuvre.",
+  "The challenge: event location accuracy": "Le défi : localiser chaque pièce en événement",
+  "High jewelry events run in temporary venues: an exhibition space, a safe room, private viewing salons. Pieces move between rooms constantly as clients request them. The maison tracked that movement with manual logs and radio calls, and locating a single piece could stall a presentation while the team searched.": "Les événements de haute joaillerie se déroulent dans des lieux temporaires : espace d'exposition, chambre forte, salons de présentation privés. Les pièces circulent constamment entre les salles au gré des demandes des clients. La maison suivait ces mouvements avec des registres manuels et des appels radio, et localiser une seule pièce pouvait retarder une présentation le temps des recherches.",
+  "The solution: PT Next intelligence": "La solution : l'intelligence PT Next",
+  "PT Next deployed a turnkey event operations platform to provide:": "PT Next a déployé une plateforme événementielle clé en main offrant :",
+  "Real-time, passive location tracking": "Suivi de localisation passif en temps réel",
+  "Immediate product retrieval for client presentations": "Récupération immédiate des pièces pour les présentations client",
+  "The impact: client experience": "L'impact : l'expérience client",
+  "Staff located pieces on demand throughout the event. No presentation was delayed by a search.": "Le personnel a localisé les pièces à la demande tout au long de l'événement. Aucune présentation n'a été retardée par une recherche.",
+  "The impact: security": "L'impact : la sécurité",
+  "Every movement left a timestamped record, replacing handwritten logs and end-of-night reconciliation.": "Chaque mouvement a laissé une trace horodatée, remplaçant les registres manuscrits et les rapprochements de fin de soirée.",
+
+  /* ===== DEPLOYMENTS ===== */
+  "One platform, wherever a piece needs to be tracked.": "Une seule plateforme, partout où une pièce doit être suivie.",
+  "The everyday operation, made certain.": "Les opérations quotidiennes, en toute certitude.",
+  "Permanent RFID coverage across storage, display, and back of house. Counts, presentations, and conversion, tracked continuously as part of daily operations.": "Une couverture RFID permanente du stockage, des vitrines et de l'arrière-boutique. Inventaires, présentations et conversion, suivis en continu dans le cadre des opérations quotidiennes.",
+  "The 3-Month Boutique Pilot →": "Le pilote boutique de 3 mois →",
+  "High jewelry events": "Événements de haute joaillerie",
+  "Temporary coverage, full visibility.": "Couverture temporaire, visibilité totale.",
+  "Rapid deployment for a single, time-contained event. Real-time location and presentation tracking on the pieces that matter most, with the white-glove event capability Pac Team Group already brings to these rooms.": "Un déploiement rapide pour un événement unique et limité dans le temps. Localisation en temps réel et suivi des présentations sur les pièces les plus précieuses, avec le savoir-faire événementiel que Pac Team Group apporte déjà à ces salons.",
+  "The High Jewelry Event Pilot →": "Le pilote événement haute joaillerie →",
+  "Repair centers": "Centres de réparation",
+  "Custody, never in question.": "Une garde jamais remise en question.",
+  "A piece in service is a piece at risk of being unaccounted for. Argos tracks chain of custody from intake to return, across every stage of repair and restoration.": "Une pièce en réparation est une pièce qui risque d'échapper au suivi. Argos trace la chaîne de garde de la réception au retour, à chaque étape de la réparation et de la restauration.",
+  "Talk to us about repair center coverage →": "Parlons de la couverture de vos centres de réparation →",
+
+  /* ===== COMPANY ===== */
+  "Built by people who already know the floor.": "Conçu par ceux qui connaissent déjà le terrain.",
+  "PT Next is the software company behind Argos. We started inside the rooms our clients work in, not outside them.": "PT Next est la société de logiciels derrière Argos. Nous avons commencé dans les espaces où travaillent nos clients, pas à l'extérieur.",
+  "Most inventory software is built for apparel and adapted for jewelry. Argos was built the other way around: for the case, the vault, and the client table first.": "La plupart des logiciels d'inventaire sont conçus pour le prêt-à-porter puis adaptés à la joaillerie. Argos a été construit dans l'autre sens : pour la vitrine, le coffre et la table du client d'abord.",
+  "That starting point matters. It shows up in what Argos measures, how it deploys around an event without disrupting it, and how little it asks of the staff using it.": "Ce point de départ compte. Il se voit dans ce qu'Argos mesure, dans sa capacité à se déployer autour d'un événement sans le perturber, et dans le peu qu'il demande au personnel qui l'utilise.",
+  "75+ years in luxury display, packaging, and events.": "Plus de 75 ans dans la présentation, le packaging et les événements de luxe.",
+  "PT Next was built inside Pac Team Group, a company that has spent over 75 years fitting out and running events for the maisons we now serve. That history is why we already have the relationships, the access, and the event capability this kind of deployment requires.": "PT Next est né au sein de Pac Team Group, une entreprise qui agence des boutiques et orchestre des événements pour les maisons que nous servons aujourd'hui, depuis plus de 75 ans. Cette histoire explique pourquoi nous avons déjà les relations, l'accès et la capacité événementielle qu'exige ce type de déploiement.",
+  "Team": "Équipe",
+  "Director of Engineering": "Directeur de l'ingénierie",
+  "Software Engineer": "Ingénieur logiciel",
+  "Program Manager": "Chef de programme",
+
+  /* ===== SEPTEMBER 2026 REDESIGN ===== */
+  "FAQ": "FAQ",
+  "The operating system for high-value jewelry boutiques and events.": "Le système d'exploitation des boutiques et événements de joaillerie de haute valeur.",
+  "PT Next brings real-time inventory visibility to the world's leading watch and jewelry houses. Built on the heritage of PAC Team Group, a trusted partner in the luxury industry for over 70 years, we develop solutions that give teams a live, continuous view of every piece in their care.": "PT Next apporte une visibilité d'inventaire en temps réel aux plus grandes maisons horlogères et joaillières. Fort de l'héritage de PAC Team Group, partenaire de confiance de l'industrie du luxe depuis plus de 70 ans, nous développons des solutions qui offrent aux équipes une vue continue et en direct de chaque pièce sous leur responsabilité.",
+  "Real-time location on every piece, plus the presentation and conversion data maisons previously had no way to measure.": "Localisation en temps réel de chaque pièce, plus les données de présentation et de conversion que les maisons n'avaient aucun moyen de mesurer auparavant.",
+  "Chosen by the top maisons for their boutiques and top-tier jewelry events": "Choisi par les plus grandes maisons pour leurs boutiques et leurs événements joailliers de premier plan",
+  "Across the US, trusted for the highest security and discretion requirements": "Aux États-Unis, la confiance des exigences les plus strictes en matière de sécurité et de discrétion",
+  "Pricing": "Tarification",
+  "Trial Argos during a single event. Real-time visibility and presentation tracking, without a long-term contract.": "Testez Argos lors d'un événement unique. Visibilité en temps réel et suivi des présentations, sans engagement à long terme.",
+  "A 90-day pilot in one boutique. Validate staff time savings and ROI before scaling.": "Un pilote de 90 jours dans une boutique. Validez le gain de temps et le retour sur investissement avant de déployer plus largement.",
+  "Brief progress check-ins, not a formal review process.": "Des points d'étape brefs, pas un processus d'évaluation formel.",
+  "A 90-day pilot. No long-term contract.": "Un pilote de 90 jours. Aucun engagement à long terme.",
+  "Trusted partners": "Partenaires de confiance",
+  "The game changer": "Le facteur décisif",
+  "Ecom data, in physical retail.": "Des données e-commerce, en boutique physique.",
+  "Presentation tracking, conversion data, and in-store engagement, built for intelligence teams. This is what happens after the piece leaves the case, the part no one could measure before.": "Suivi des présentations, données de conversion et engagement en boutique, conçus pour les équipes d'analyse. Ce qui se passe après que la pièce quitte la vitrine, la partie que personne n'avait pu mesurer auparavant.",
+  "Every piece reaches the client table immediately, no search required.": "Chaque pièce arrive immédiatement à la table du client, sans recherche.",
+  "Technical details & FAQ →": "Détails techniques et FAQ →",
+  "Everything you need to know.": "Tout ce que vous devez savoir.",
+  "What Argos runs on, connects to, and how it handles your data.": "Sur quoi Argos fonctionne, à quoi il se connecte et comment il gère vos données.",
+  "Argos Overview": "Vue d'ensemble d'Argos",
+  "Argos is the RFID-based inventory and presentation platform behind PT Next. RFID readers automatically track tagged pieces as they move through cases, back-of-house areas, the vault, VIP rooms, and presentation zones. This gives staff real-time visibility into where every item is located while providing HQ with measurable data on how and when pieces are presented to clients.": "Argos est la plateforme d'inventaire et de suivi des présentations basée sur la RFID, au cœur de PT Next. Les lecteurs RFID suivent automatiquement les pièces étiquetées lorsqu'elles circulent entre vitrines, réserves, coffre, salons VIP et zones de présentation. Le personnel dispose ainsi d'une visibilité en temps réel sur l'emplacement de chaque article, tandis que le siège reçoit des données mesurables sur la façon dont les pièces sont présentées aux clients.",
+  "What infrastructure is required?": "Quelle infrastructure est nécessaire ?",
+  "RFID readers communicate using the boutique's existing network and Wi-Fi infrastructure. No dedicated network or additional cabling is typically required.": "Les lecteurs RFID communiquent via le réseau et le Wi-Fi existants de la boutique. Aucun réseau dédié ni câblage supplémentaire n'est généralement nécessaire.",
+  "What setup requires": "Ce que l'installation exige",
+  "Minimal change to your existing process.": "Un changement minimal à votre processus existant.",
+  "Replace your existing label printer with an RFID-enabled printer and your current tags with RFID tags. From there, tag your pieces just as you do today. The readers already installed throughout the boutique handle the rest.": "Remplacez votre imprimante d'étiquettes par une imprimante compatible RFID et vos étiquettes actuelles par des étiquettes RFID. Ensuite, étiquetez vos pièces comme aujourd'hui. Les lecteurs déjà installés dans la boutique s'occupent du reste.",
+  "Printer": "Imprimante",
+  "Prints each item's tag on the spot.": "Imprime l'étiquette de chaque article sur place.",
+  "Tag": "Étiquette",
+  "Attached once, discreetly, to the piece.": "Posée une fois, discrètement, sur la pièce.",
+  "Readers": "Lecteurs",
+  "Already in place at your capture points.": "Déjà en place à vos points de capture.",
+  "Argos Dashboard": "Tableau de bord Argos",
+  "Available online. Location, alerts, and reports from any browser, anytime.": "Disponible en ligne. Localisation, alertes et rapports depuis n'importe quel navigateur, à tout moment.",
+  "Built to work alongside existing point-of-sale and inventory systems rather than replace them.": "Conçu pour fonctionner aux côtés de vos systèmes de caisse et d'inventaire existants plutôt que de les remplacer.",
+  "PT Next builds integrations directly with clients' IT and software teams. Recent examples include:": "PT Next développe des intégrations directement avec les équipes informatiques de ses clients. Exemples récents :",
+  "ERP and catalog data integration, allowing Argos to associate RFID-tracked pieces with your existing product and inventory data.": "Intégration des données ERP et catalogue, permettant à Argos d'associer les pièces suivies par RFID à vos données produit et inventaire existantes.",
+  "Custom RFID tag printing that fits your existing printing process.": "Impression d'étiquettes RFID sur mesure, adaptée à votre processus d'impression existant.",
+  "How does the audit trail work?": "Comment fonctionne la piste d'audit ?",
+  "Each tag read creates a timestamped record of what moved, when, and where, the same audit trail flagship stores already keep by hand, now generated automatically.": "Chaque lecture d'étiquette crée un enregistrement horodaté de ce qui a bougé, quand et où — la même piste d'audit que les boutiques phares tiennent à la main, désormais générée automatiquement.",
+  "Timestamped movement log": "Journal de mouvements horodaté",
+  "Every read is logged automatically, replacing handwritten counts and end-of-night reconciliation.": "Chaque lecture est enregistrée automatiquement, remplaçant les comptages manuscrits et les rapprochements de fin de journée.",
+  "Your data, your systems": "Vos données, vos systèmes",
+  "Inventory and presentation data stays with your team. Nothing is shared or pooled across accounts.": "Les données d'inventaire et de présentation restent chez votre équipe. Rien n'est partagé ni mutualisé entre comptes.",
+  "Who can access the data?": "Qui peut accéder aux données ?",
+  "Access is role-based. Boutique staff, managers, and HQ each see only what's relevant to their role, no shared logins, no pooled views.": "L'accès est basé sur les rôles. Le personnel de boutique, les managers et le siège ne voient que ce qui concerne leur rôle — pas de connexions partagées, pas de vues mutualisées.",
+  "Benefits by role": "Avantages par rôle",
+  "Argos already knows where every piece is, even mid-presentation.": "Argos sait déjà où se trouve chaque pièce, même en pleine présentation.",
+  "See how the boutique is really performing.": "Voyez comment la boutique performe réellement.",
+  "Sell-through, presentation activity, and shrinkage in one view, updated in real time instead of pieced together at count time.": "Taux de vente, activité de présentation et démarque dans une seule vue, mises à jour en temps réel au lieu d'être reconstituées lors des inventaires.",
+  "One view of every boutique.": "Une vue de chaque boutique.",
+  "Compare presentation and conversion across every boutique, side by side.": "Comparez présentations et conversion sur toutes les boutiques, côte à côte.",
+  "Have a question we didn't cover?": "Une question sans réponse ici ?",
+  "Talk to us about your team's specific requirements.": "Parlez-nous des besoins spécifiques de votre équipe.",
+
+  /* ===== COOKIE CONSENT ===== */
+  "Analytics cookies": "Cookies analytiques",
+  "We use analytics cookies to understand how visitors use our site. You can accept or decline — the site works either way.": "Nous utilisons des cookies analytiques pour comprendre comment les visiteurs utilisent notre site. Vous pouvez accepter ou refuser — le site fonctionne dans les deux cas.",
+  "Accept": "Accepter",
+  "Decline": "Refuser",
+
+  /* =====================================================================
+   * 404, Thank You, and contact-form states. Authoritative French supplied
+   * by the client (missing items.zip / translations.js, 2026-07-08) — these
+   * did not exist in the original handoff dictionary.
+   * ===================================================================== */
+
+  /* ----- 404 ----- */
+  "Home": "Accueil",
+  "Page not found": "Page introuvable",
+  "This piece isn't in the case.": "Cette pièce n'est pas dans la vitrine.",
+  "The page you were looking for has moved or never existed. The rest of PT Next is still here.": "La page que vous cherchiez a été déplacée ou n'a jamais existé. Le reste de PT Next est toujours là.",
+  "Contact us": "Nous contacter",
+
+  /* ----- THANK YOU ----- */
+  "Message received": "Message reçu",
+  "Thank you. We'll be in touch shortly.": "Merci. Nous vous recontacterons sous peu.",
+  "Someone from PT Next will reach out within one business day to arrange a call and understand the room you have in mind.": "Un membre de l'équipe PT Next vous recontactera sous un jour ouvré pour organiser un appel et comprendre l'espace que vous avez en tête.",
+  "Return home": "Retour à l'accueil",
+  "In the meantime": "En attendant",
+  "Reach us directly at": "Contactez-nous directement à",
+  "or": "ou",
+
+  /* ----- CONTACT FORM STATES ----- */
+  "Sending…": "Envoi en cours…",
+  "Something went wrong. Please email us directly at info@ptnext.com.": "Une erreur s'est produite. Merci de nous écrire directement à info@ptnext.com.",
+};
+
+/** Translate an exact English copy string into the target locale. */
+export function t(locale: Locale, s: string): string {
+  if (locale === 'en') return s;
+  const fr = dict[s];
+  if (fr === undefined && process.env.NODE_ENV !== 'production') {
+    console.warn(`[i18n] Missing FR translation for: "${s}"`);
+  }
+  return fr ?? s;
+}
+
+/** Bind a locale once per page: const T = tr(locale); T("Platform") */
+export function tr(locale: Locale) {
+  return (s: string) => t(locale, s);
+}

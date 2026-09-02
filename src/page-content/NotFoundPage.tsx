@@ -1,0 +1,100 @@
+import { tr, type Locale } from '@/lib/translations';
+import { href, type PageKey } from '@/lib/routes';
+import { Nav } from '@/components/Nav';
+import { Footer } from '@/components/Footer';
+
+/* Ported from PT Next 404.dc.html.
+   Static hosting serves a single 404 document for all unmatched URLs, so
+   this page renders in English (the x-default language), like the design. */
+
+const sections: { num: string; key: PageKey; label: string }[] = [
+  { num: '01', key: 'home', label: 'Home' },
+  { num: '02', key: 'platform', label: 'Platform' },
+  { num: '03', key: 'deployments', label: 'Deployments' },
+  { num: '04', key: 'usecases', label: 'Use Cases' },
+  { num: '05', key: 'howitworks', label: 'How it works' },
+  { num: '06', key: 'proof', label: 'Proof' },
+  { num: '07', key: 'company', label: 'Company' },
+];
+
+export function NotFoundPage({ locale }: { locale: Locale }) {
+  const T = tr(locale);
+  return (
+    <div style={{ background: '#0e0e0f', color: '#faf8f5', fontFamily: 'Inter,sans-serif', fontWeight: 300, minHeight: '100vh' }}>
+      <Nav locale={locale} active="" pageKey={null} />
+
+      <main
+        style={{
+          minHeight: 'calc(100vh - 72px - 130px)', display: 'flex', flexDirection: 'column',
+          alignItems: 'center', justifyContent: 'center', padding: '120px 40px',
+          textAlign: 'center', background: '#0e0e0f',
+        }}
+      >
+        <div
+          style={{
+            fontFamily: "'Cormorant Garamond',serif", fontWeight: 300, fontSize: 180, lineHeight: 1,
+            color: '#1e1e21', letterSpacing: '-0.02em', marginBottom: 16, userSelect: 'none',
+          }}
+        >
+          404
+        </div>
+
+        <div style={{ width: 42, height: 1, background: '#E87722', margin: '0 auto 32px' }} />
+
+        <div style={{ fontSize: 11, letterSpacing: '.24em', textTransform: 'uppercase', color: '#8f897f', marginBottom: 24 }}>
+          {T('Page not found')}
+        </div>
+
+        <h1
+          style={{
+            fontFamily: "'Cormorant Garamond',serif", fontWeight: 300, fontSize: 52, lineHeight: 1.08,
+            letterSpacing: '-0.01em', maxWidth: 640, margin: 0, textWrap: 'pretty',
+          }}
+        >
+          {T("This piece isn't in the case.")}
+        </h1>
+
+        <p style={{ fontSize: 17, color: '#a29d94', lineHeight: 1.7, maxWidth: 480, margin: '28px auto 0', fontWeight: 300 }}>
+          {T('The page you were looking for has moved or never existed. The rest of PT Next is still here.')}
+        </p>
+
+        <nav
+          aria-label="Site sections"
+          style={{
+            display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 1,
+            background: '#1e1e21', border: '1px solid #1e1e21', marginTop: 64, maxWidth: 760, width: '100%',
+          }}
+          data-grid-mobile="keep"
+        >
+          {sections.map((s) => (
+            <a
+              key={s.key}
+              href={href(locale, s.key)}
+              className="h-card f-inset"
+              style={{
+                background: '#0e0e0f', padding: '24px 20px', textDecoration: 'none', color: '#faf8f5',
+                display: 'flex', flexDirection: 'column', gap: 6, textAlign: 'left',
+              }}
+            >
+              <span style={{ fontSize: 10, letterSpacing: '.16em', textTransform: 'uppercase', color: '#6b665e' }}>{s.num}</span>
+              <span style={{ fontSize: 15, fontWeight: 400 }}>{T(s.label)}</span>
+            </a>
+          ))}
+          <a
+            href="mailto:info@ptnext.com"
+            className="h-card f-inset"
+            style={{
+              background: '#0e0e0f', padding: '24px 20px', textDecoration: 'none', color: '#faf8f5',
+              display: 'flex', flexDirection: 'column', gap: 6, textAlign: 'left',
+            }}
+          >
+            <span style={{ fontSize: 10, letterSpacing: '.16em', textTransform: 'uppercase', color: '#E87722' }}>→</span>
+            <span style={{ fontSize: 15, fontWeight: 400 }}>{T('Contact us')}</span>
+          </a>
+        </nav>
+      </main>
+
+      <Footer locale={locale} />
+    </div>
+  );
+}
