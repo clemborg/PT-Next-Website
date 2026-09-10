@@ -1,0 +1,141 @@
+---
+import { css } from '@/lib/style';
+
+interface Props {
+  heading: string;
+  headingSize?: number;
+  subheading: string;
+  inputBg: string;
+  linkHref: string;
+  linkLabel: string;
+  thankYouHref: string;
+  labels: {
+    name: string;
+    email: string;
+    message: string;
+    submit: string;
+    sending: string;
+    error: string;
+  };
+}
+
+const {
+  heading,
+  headingSize = 50,
+  subheading,
+  inputBg,
+  linkHref,
+  linkLabel,
+  thankYouHref,
+  labels,
+} = Astro.props;
+
+const fieldStyle = css({
+  width: '100%', border: '1px solid #26262a', color: '#faf8f5',
+  fontFamily: 'Inter,sans-serif', fontSize: 14, padding: '13px 16px',
+  borderRadius: 1, background: inputBg,
+});
+---
+<section id="contact" style={css({ padding: '120px 64px', background: '#0e0e0f', textAlign: 'center' })}>
+  <div style={css({ width: 42, height: 1, background: '#E87722', margin: '0 auto 32px' })} />
+  <h2 style={css({
+    fontFamily: "'Cormorant Garamond',serif", fontWeight: 300, fontSize: headingSize,
+    lineHeight: 1.08, maxWidth: 640, margin: '0 auto', color: '#faf8f5',
+  })}>
+    {heading}
+  </h2>
+  <p style={css({ fontSize: 16, color: '#a29d94', lineHeight: 1.7, maxWidth: 440, margin: '22px auto 0', fontWeight: 300 })}>
+    {subheading}
+  </p>
+  <form
+    id="contact-form"
+    data-thankyou={thankYouHref}
+    data-sending={labels.sending}
+    data-error={labels.error}
+    style={css({ maxWidth: 440, margin: '38px auto 0', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: 18 })}
+  >
+    <div>
+      <label for="contact-name" style={css({ display: 'block', fontSize: 11, letterSpacing: '.12em', textTransform: 'uppercase', color: '#8f897f', marginBottom: 8 })}>
+        {labels.name}
+      </label>
+      <input id="contact-name" name="Name" type="text" required class="f-input" style={fieldStyle} />
+    </div>
+    <div>
+      <label for="contact-email" style={css({ display: 'block', fontSize: 11, letterSpacing: '.12em', textTransform: 'uppercase', color: '#8f897f', marginBottom: 8 })}>
+        {labels.email}
+      </label>
+      <input id="contact-email" name="Email" type="email" required class="f-input" style={fieldStyle} />
+    </div>
+    <div>
+      <label for="contact-message" style={css({ display: 'block', fontSize: 11, letterSpacing: '.12em', textTransform: 'uppercase', color: '#8f897f', marginBottom: 8 })}>
+        {labels.message}
+      </label>
+      <textarea id="contact-message" name="Message" rows={4} class="f-input" style={css({
+        width: '100%', border: '1px solid #26262a', color: '#faf8f5',
+        fontFamily: 'Inter,sans-serif', fontSize: 14, padding: '13px 16px',
+        borderRadius: 1, background: inputBg, resize: 'vertical',
+      })} />
+    </div>
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style={css({ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 })} />
+    <button
+      type="submit"
+      class="f-white2 contact-submit"
+      data-label={labels.submit}
+      style={css({
+        fontSize: 15, color: '#0e0e0f', background: '#E87722', padding: '15px 32px',
+        letterSpacing: '.02em', fontWeight: 500, borderRadius: 1, border: 'none',
+        fontFamily: 'Inter,sans-serif', cursor: 'pointer',
+        alignSelf: 'center',
+      })}
+    >
+      {labels.submit}
+    </button>
+    <p id="contact-error" role="alert" hidden style={css({ fontSize: 13, color: '#E87722', lineHeight: 1.6, textAlign: 'center', margin: 0 })} />
+  </form>
+  <div style={css({ display: 'flex', gap: 20, justifyContent: 'center', alignItems: 'center', marginTop: 30, flexWrap: 'wrap' })}>
+    <a href={linkHref} class="f-orange3" style={css({ fontSize: 15, color: '#faf8f5', letterSpacing: '.02em', borderBottom: '1px solid #4a4843', paddingBottom: 3, textDecoration: 'none' })}>
+      {linkLabel}
+    </a>
+    <a href="mailto:info@ptnext.com" class="f-orange3" style={css({ fontSize: 15, color: '#faf8f5', letterSpacing: '.02em', textDecoration: 'none' })}>info@ptnext.com</a>
+  </div>
+</section>
+<script>
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xojooqbl';
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  if (form) {
+    const btn = form.querySelector('.contact-submit') as HTMLButtonElement;
+    const err = document.getElementById('contact-error') as HTMLParagraphElement;
+    const idleLabel = btn.dataset.label || btn.textContent || '';
+    let sending = false;
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (sending) return;
+      sending = true;
+      err.hidden = true;
+      btn.disabled = true;
+      btn.style.opacity = '0.7';
+      btn.style.cursor = 'default';
+      btn.textContent = form.dataset.sending || 'Sending…';
+      try {
+        const res = await fetch(FORMSPREE_ENDPOINT, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+        if (res.ok) {
+          window.location.href = form.dataset.thankyou || '/thank-you/';
+          return;
+        }
+        throw new Error('bad status');
+      } catch {
+        err.textContent = form.dataset.error || '';
+        err.hidden = false;
+        btn.disabled = false;
+        btn.style.opacity = '1';
+        btn.style.cursor = 'pointer';
+        btn.textContent = idleLabel;
+        sending = false;
+      }
+    });
+  }
+</script>

@@ -1,16 +1,37 @@
 # PT Next — Marketing Site
 
-Production rebuild of the PT Next / Argos marketing site from the design
-handoff package (`../package/design_handoff_seo_static_export/`).
+Production rebuild of the PT Next / Argos marketing site (September 2026
+redesign). Two stack implementations live in this repo — pick the one your
+team prefers:
+
+| Stack | Folder | Build output | JS shipped |
+|-------|--------|--------------|------------|
+| **Next.js 15** | repo root | `out/` | ~103 KB (React runtime) |
+| **Astro 5** | `astro/` | `astro/dist/` | ~0 (vanilla scripts only) |
+
+Both produce the same site: 6 pages × 2 locales, same SEO, same Formspree
+form, same September nav (Platform, Use Cases, Proof, Company, FAQ).
+
+## Next.js (repo root)
 
 Next.js 15 (App Router), **full static export** — every page ships complete
 HTML at build time. No server required; deploy `out/` to any static host.
 
-## Commands
-
 ```
 npm install
 npm run build     # → out/
+npm run dev       # local dev server
+```
+
+## Astro (`astro/`)
+
+Recommended for teams that want shared components without a React runtime.
+See [astro/README.md](astro/README.md) for full details.
+
+```
+cd astro
+npm install
+npm run build     # → dist/
 npm run dev       # local dev server
 ```
 

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  PT Next — sitemap.xml
+  12 URLs: 6 pages × 2 languages. Each <url> declares reciprocal
+  xhtml:link alternates (en / fr / x-default).
+  All URLs use a trailing slash (site convention; trailingSlash: true).
+  Thank You pages and legacy redirects are noindex and excluded.
+-->
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Home -->
+  <url>
+    <loc>https://ptnext.com/</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://ptnext.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://ptnext.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ptnext.com/"/>
+  </url>
+  <url>
+    <loc>https://ptnext.com/fr/</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://ptnext.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://ptnext.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ptnext.com/"/>
+  </url>
+
+  <!-- Platform / Plateforme -->
+  <url>
+    <loc>https://ptnext.com/platform/</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://ptnext.com/platform/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://ptnext.com/fr/plateforme/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ptnext.com/platform/"/>
+  </url>
+  <url>
+    <loc>https://ptnext.com/fr/plateforme/</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://ptnext.com/platform/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://ptnext.com/fr/plateforme/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ptnext.com/platform/"/>
+  </url>
+
+  <!-- Use Cases (Deployments URL) / Cas d'usage -->
+  <url>
+    <loc>https://ptnext.com/deployments/</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://ptnext.com/deployments/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://ptnext.com/fr/deploiements/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ptnext.com/deployments/"/>
+  </url>
+  <url>
+    <loc>https://ptnext.com/fr/deploiements/</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://ptnext.com/deployments/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://ptnext.com/fr/deploiements/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ptnext.com/deployments/"/>
+  </url>
+
+  <!-- Proof / Preuves -->
+  <url>
+    <loc>https://ptnext.com/proof/</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://ptnext.com/proof/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://ptnext.com/fr/preuves/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ptnext.com/proof/"/>
+  </url>
+  <url>
+    <loc>https://ptnext.com/fr/preuves/</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://ptnext.com/proof/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://ptnext.com/fr/preuves/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ptnext.com/proof/"/>
+  </url>
+
+  <!-- Company / Société -->
+  <url>
+    <loc>https://ptnext.com/company/</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://ptnext.com/company/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://ptnext.com/fr/societe/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ptnext.com/company/"/>
+  </url>
+  <url>
+    <loc>https://ptnext.com/fr/societe/</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://ptnext.com/company/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://ptnext.com/fr/societe/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ptnext.com/company/"/>
+  </url>
+
+  <!-- FAQ -->
+  <url>
+    <loc>https://ptnext.com/faq/</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://ptnext.com/faq/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://ptnext.com/fr/faq/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ptnext.com/faq/"/>
+  </url>
+  <url>
+    <loc>https://ptnext.com/fr/faq/</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://ptnext.com/faq/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://ptnext.com/fr/faq/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ptnext.com/faq/"/>
+  </url>
+
+</urlset>

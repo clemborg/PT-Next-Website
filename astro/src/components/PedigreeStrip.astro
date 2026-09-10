@@ -1,0 +1,34 @@
+---
+import { tr, type Locale } from '@/lib/translations';
+import { css } from '@/lib/style';
+
+interface Props {
+  locale: Locale;
+  altBackground?: boolean;
+  borderTop?: boolean;
+  borderBottom?: boolean;
+}
+
+const { locale, altBackground = false, borderTop = true, borderBottom = true } = Astro.props;
+const T = tr(locale);
+---
+<div
+  class="pedigree-strip"
+  style={css({
+    padding: '20px 64px',
+    background: altBackground ? 'var(--bg-alt)' : 'var(--bg)',
+    ...(borderTop ? { borderTop: '1px solid var(--border)' } : {}),
+    ...(borderBottom ? { borderBottom: '1px solid var(--border)' } : {}),
+    display: 'flex', justifyContent: 'center',
+  })}
+>
+  <div style={css({ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: 14, maxWidth: 600 })}>
+    <span style={css({ fontSize: 12, letterSpacing: '.16em', textTransform: 'uppercase', color: 'var(--muted-2)' })}>
+      {T('Backed by Pac Team Group')}
+    </span>
+    <span style={css({ width: 4, height: 4, background: 'var(--orange)', borderRadius: '50%' })} />
+    <span style={css({ fontSize: 12, letterSpacing: '.16em', textTransform: 'uppercase', color: 'var(--muted-2)' })}>
+      {T('75+ years in luxury')}
+    </span>
+  </div>
+</div>

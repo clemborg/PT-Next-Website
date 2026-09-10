@@ -1,0 +1,103 @@
+---
+import { tr, type Locale } from '@/lib/translations';
+import { href } from '@/lib/routes';
+import { css } from '@/lib/style';
+import Nav from '@/components/Nav.astro';
+import Footer from '@/components/Footer.astro';
+import PedigreeStrip from '@/components/PedigreeStrip.astro';
+import ContactForm from '@/components/ContactForm.astro';
+
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const T = tr(locale);
+const team = [
+  { img: '/images/team-eric.png', name: 'Eric Zuckerman', role: 'CEO' },
+  { img: '/images/team-pete.png', name: 'Pete Shoemaker', role: 'Director of Engineering' },
+  { img: '/images/team-danny.png', name: 'Danny Merando', role: 'Software Engineer' },
+  { img: '/images/team-clemente.png', name: 'Clemente Borgogni', role: 'Program Manager' },
+];
+
+---
+<div style={css({ background: '#0e0e0f', fontFamily: 'Inter,sans-serif', color: '#faf8f5', minHeight: '100vh' })}>
+      <Nav locale={locale} active="company" pageKey="company" />
+
+      <!-- HERO -->
+      <section style={css({ padding: '110px 64px 80px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' })}>
+        <div style={css({ fontSize: 12, letterSpacing: '.16em', textTransform: 'uppercase', color: '#c99a5b', marginBottom: 20 })}>{T('Company')}</div>
+        <div style={css({ width: 42, height: 1, background: '#E87722', marginBottom: 28 })} />
+        <h1 class="hero-h1" style={css({ fontFamily: "'Cormorant Garamond',serif", fontWeight: 300, fontSize: 56, lineHeight: 1.1, maxWidth: 740 })}>
+          {T('Built by people who already know the floor.')}
+        </h1>
+        <p style={css({ fontSize: 17, color: '#a29d94', lineHeight: 1.8, marginTop: 26, maxWidth: 600, fontWeight: 300 })}>
+          {T('PT Next is the software company behind Argos. We started inside the rooms our clients work in, not outside them.')}
+        </p>
+      </section>
+
+      <!-- STORY -->
+      <section style={css({ padding: '20px 64px 100px' })}>
+        <div style={css({ maxWidth: 720, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 24 })}>
+          <p style={css({ fontSize: 16, color: '#cabfa8', lineHeight: 1.9 })}>
+            {T('Most inventory software is built for apparel and adapted for jewelry. Argos was built the other way around: for the case, the vault, and the client table first.')}
+          </p>
+          <p style={css({ fontSize: 16, color: '#cabfa8', lineHeight: 1.9 })}>
+            {T('That starting point matters. It shows up in what Argos measures, how it deploys around an event without disrupting it, and how little it asks of the staff using it.')}
+          </p>
+        </div>
+      </section>
+
+      <!-- PAC TEAM RELATIONSHIP -->
+      <section style={css({ padding: '80px 64px', background: '#12142a', borderTop: '1px solid #1c2450', borderBottom: '1px solid #1c2450' })}>
+        <div style={css({ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '0.9fr 1.1fr', gap: 64, alignItems: 'center' })}>
+          <div>
+            <div style={css({ fontSize: 12, letterSpacing: '.16em', textTransform: 'uppercase', color: '#8a92c9', marginBottom: 18 })}>
+              {T('Backed by Pac Team Group')}
+            </div>
+            <h2 style={css({ fontFamily: "'Cormorant Garamond',serif", fontWeight: 300, fontSize: 38, lineHeight: 1.15, color: '#faf8f5' })}>
+              {T('75+ years in luxury display, packaging, and events.')}
+            </h2>
+          </div>
+          <div>
+            <p style={css({ fontSize: 15, color: '#c3c6e2', lineHeight: 1.85 })}>
+              {T('PT Next was built inside Pac Team Group, a company that has spent over 75 years fitting out and running events for the maisons we now serve. That history is why we already have the relationships, the access, and the event capability this kind of deployment requires.')}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TEAM -->
+      <section style={css({ padding: '100px 64px' })}>
+        <div style={css({ maxWidth: 1100, margin: '0 auto' })}>
+          <div style={css({ fontSize: 12, letterSpacing: '.16em', textTransform: 'uppercase', color: '#c99a5b', marginBottom: 18 })}>{T('Team')}</div>
+          <div style={css({ marginTop: 0, display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 1, background: '#1e1e21', border: '1px solid #1e1e21' })}>
+            {team.map((member) => (
+              <div  style={css({ background: '#0e0e0f', padding: '32px 28px' })}>
+                <div style={css({ width: 64, height: 64, borderRadius: '50%', overflow: 'hidden', marginBottom: 18 })}>
+                  <img src={member.img} alt={member.name} style={css({ width: '100%', height: '100%', objectFit: 'cover', display: 'block' })} />
+                </div>
+                <div style={css({ fontFamily: "'Cormorant Garamond',serif", fontWeight: 500, fontSize: 22, color: '#faf8f5' })}>{member.name}</div>
+                <div style={css({ fontSize: 12, letterSpacing: '.06em', textTransform: 'uppercase', color: '#8f897f', marginTop: 8 })}>{T(member.role)}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <ContactForm
+        heading={T("Start a conversation.")}
+        subheading={T("Tell us about your boutique or upcoming event.")}
+        inputBg="#141416"
+        linkHref={href(locale, 'platform')}
+        linkLabel={T("Explore the platform")}
+        thankYouHref={href(locale, 'thankyou')}
+        labels={{
+          name: T('Name'),
+          email: T('Email'),
+          message: T('Tell us about your boutique or event'),
+          submit: T('Request a pilot'),
+          sending: T('Sending…'),
+          error: T('Something went wrong. Please email us directly at info@ptnext.com.'),
+        }}
+      />
+
+      <Footer locale={locale} />
+    </div>

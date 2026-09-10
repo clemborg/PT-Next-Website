@@ -1,0 +1,15 @@
+{
+  "name": "ptnext-site-astro",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PT Next marketing site — Astro 5 static build (September 2026)",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^5.2.0"
+  }
+}

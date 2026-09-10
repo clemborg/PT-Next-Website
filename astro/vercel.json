@@ -1,0 +1,8 @@
+{
+  "redirects": [
+    { "source": "/how-it-works/", "destination": "/#event-pilot", "permanent": true },
+    { "source": "/fr/fonctionnement/", "destination": "/fr/#event-pilot", "permanent": true },
+    { "source": "/use-cases/", "destination": "/deployments/", "permanent": true },
+    { "source": "/fr/cas-dusage/", "destination": "/fr/deploiements/", "permanent": true }
+  ]
+}

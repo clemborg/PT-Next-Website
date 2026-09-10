@@ -1,0 +1,29 @@
+---
+import { css } from '@/lib/style';
+
+interface Props {
+  num: string;
+  title: string;
+  body: string;
+  last?: boolean;
+}
+
+const { num, title, body, last = false } = Astro.props;
+---
+<div style={css({ display: 'flex', gap: 18, paddingBottom: last ? 0 : 24, position: 'relative' })}>
+  {!last && (
+    <div style={css({ position: 'absolute', left: 17, top: 36, bottom: 0, width: 1, background: 'var(--border-2)' })} />
+  )}
+  <div style={css({
+    width: 36, height: 36, flex: '0 0 auto', borderRadius: '50%', background: 'var(--bg)',
+    border: '1px solid var(--orange)', display: 'flex', alignItems: 'center', justifyContent: 'center',
+    fontFamily: "'Cormorant Garamond',serif", fontWeight: 600, fontSize: 15, color: 'var(--orange)',
+    position: 'relative', zIndex: 1,
+  })}>
+    {num}
+  </div>
+  <div style={css({ paddingTop: 5 })}>
+    <h4 style={css({ fontFamily: "'Cormorant Garamond',serif", fontSize: 19, fontWeight: 600 })}>{title}</h4>
+    <p style={css({ fontSize: 13, color: 'var(--muted)', lineHeight: 1.7, marginTop: 6 })}>{body}</p>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+---
+import { tr, type Locale } from '@/lib/translations';
+
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const T = tr(locale);
+const gaId = import.meta.env.PUBLIC_GA_ID;
+---
+{gaId && (
+  <>
+    <div id="consent-banner" class="consent-banner" role="dialog" aria-labelledby="consent-banner-title" aria-describedby="consent-banner-desc" hidden>
+      <div class="consent-banner-inner">
+        <p id="consent-banner-title" class="consent-banner-title">{T('Analytics cookies')}</p>
+        <p id="consent-banner-desc" class="consent-banner-desc">
+          {T('We use analytics cookies to understand how visitors use our site. You can accept or decline — the site works either way.')}
+        </p>
+        <div class="consent-banner-actions">
+          <button type="button" class="consent-btn consent-btn-decline f-orange2" data-consent="declined">{T('Decline')}</button>
+          <button type="button" class="consent-btn consent-btn-accept f-white2" data-consent="accepted">{T('Accept')}</button>
+        </div>
+      </div>
+    </div>
+    <script is:inline define:vars={{ gaId }}>
+      (function () {
+        var CONSENT_KEY = 'ptnext-analytics-consent';
+        function readConsent() {
+          try {
+            var v = localStorage.getItem(CONSENT_KEY);
+            if (v === 'accepted' || v === 'declined') return v;
+          } catch (e) {}
+          return null;
+        }
+        function loadGA() {
+          if (!gaId) return;
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+          document.head.appendChild(s);
+          window.dataLayer = window.dataLayer || [];
+          function gtag() { dataLayer.push(arguments); }
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', gaId);
+        }
+        function saveConsent(value) {
+          try { localStorage.setItem(CONSENT_KEY, value); } catch (e) {}
+          var banner = document.getElementById('consent-banner');
+          if (banner) banner.hidden = true;
+          if (value === 'accepted') loadGA();
+        }
+        var consent = readConsent();
+        if (consent === 'accepted') {
+          loadGA();
+        } else if (consent === null) {
+          var banner = document.getElementById('consent-banner');
+          if (banner) banner.hidden = false;
+        }
+        document.querySelectorAll('[data-consent]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            saveConsent(btn.getAttribute('data-consent'));
+          });
+        });
+      })();
+    </script>
+  </>
+)}

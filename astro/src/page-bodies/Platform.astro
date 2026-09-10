@@ -1,0 +1,166 @@
+---
+import { tr, type Locale } from '@/lib/translations';
+import { href } from '@/lib/routes';
+import { css } from '@/lib/style';
+import Nav from '@/components/Nav.astro';
+import Footer from '@/components/Footer.astro';
+import PedigreeStrip from '@/components/PedigreeStrip.astro';
+import ContactForm from '@/components/ContactForm.astro';
+
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const T = tr(locale);
+const imgBox = {
+    aspectRatio: '1536/860', backgroundColor: '#f5f3ef', border: '1px solid var(--border-2)',
+    borderRadius: 8, overflow: 'hidden', boxShadow: '0 30px 70px -25px rgba(0,0,0,.4)',
+  };
+---
+    <div class="page">
+      
+      <Nav locale={locale} active="platform" pageKey="platform" />
+
+      <section style={css({ padding: '110px 64px 90px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' })}>
+        <div style={css({ fontSize: 12, letterSpacing: '.16em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 20 })}>{T('The platform')}</div>
+        <div style={css({ width: 42, height: 1, background: 'var(--orange)', marginBottom: 28 })} />
+        <h1 class="hero-h1" style={css({ fontFamily: "'Cormorant Garamond',serif", fontWeight: 300, fontSize: 60, lineHeight: 1.08, maxWidth: 760 })}>
+          {T('Argos. One continuous view of the boutique floor.')}
+        </h1>
+        <p style={css({ fontSize: 17, color: 'var(--muted)', lineHeight: 1.8, marginTop: 26, maxWidth: 640, fontWeight: 300 })}>
+          {T('Real-time certainty over every piece, from the safe to the client table, and physical presentations turned into measurable data, for the first time.')}
+        </p>
+        <div style={css({ display: 'flex', gap: 22, marginTop: 36, alignItems: 'center', flexWrap: 'wrap' })}>
+          <a href="mailto:info@ptnext.com?subject=Pilot%20Request" class="f-white2" style={css({ fontSize: 15, color: '#0e0e0f', background: 'var(--orange)', padding: '15px 30px', letterSpacing: '.02em', fontWeight: 500, borderRadius: 1, textDecoration: 'none' })}>
+            {T('Request a pilot')}
+          </a>
+          <a href="#contact" class="f-orange3" style={css({ fontSize: 15, color: 'var(--text)', letterSpacing: '.02em', borderBottom: '1px solid var(--divider)', paddingBottom: 3, textDecoration: 'none' })}>
+            {T('Talk to us')}
+          </a>
+        </div>
+      </section>
+
+      <!-- CAPABILITY 01 — Presentation & Conversion Intelligence -->
+      <section id="capability-01" style={css({ padding: '96px 64px', background: 'var(--bg)', position: 'relative', borderTop: '1px solid var(--border)' })}>
+        <div style={css({ position: 'absolute', top: 0, left: 64, right: 64, height: 1, background: 'linear-gradient(90deg,var(--orange),transparent)' })} />
+        <div style={css({ display: 'flex', alignItems: 'baseline', gap: 16, marginBottom: 12 })}>
+          <div style={css({ fontSize: 13, color: 'var(--gold)', fontFamily: "'SF Mono',monospace" })}>01</div>
+          <div style={css({ fontSize: 12, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--gold)' })}>{T('The game changer')}</div>
+        </div>
+        <div style={css({ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: 64, alignItems: 'center', marginTop: 28 })}>
+          <div>
+            <div style={css({ fontFamily: "'Cormorant Garamond',serif", fontStyle: 'italic', fontSize: 20, color: 'var(--orange)', marginBottom: 8 })}>{T('Ecom data, in physical retail.')}</div>
+            <h2 style={css({ fontFamily: "'Cormorant Garamond',serif", fontWeight: 600, fontSize: 44, lineHeight: 1.1 })}>{T('Presentation and Conversion Intelligence')}</h2>
+            <p style={css({ fontSize: 16, color: 'var(--warm-2)', lineHeight: 1.85, marginTop: 24, maxWidth: 480 })}>
+              {T('Presentation tracking, conversion data, and in-store engagement, built for intelligence teams. This is what happens after the piece leaves the case, the part no one could measure before.')}
+            </p>
+            <div style={css({ marginTop: 26, paddingTop: 22, borderTop: '1px solid var(--divider-warm)' })}>
+              <div style={css({ fontSize: 11, letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--warm-muted)', marginBottom: 8 })}>{T('What it replaces')}</div>
+              <p style={css({ fontSize: 13, color: 'var(--warm-muted)', lineHeight: 1.7, maxWidth: 440 })}>{T('Guesswork. No real answer to which presentations convert.')}</p>
+            </div>
+          </div>
+          <div style={css({ ...imgBox, aspectRatio: '1536/1024' })}>
+            <img src="/images/platform-conversion.png" alt="Argos presentations table showing client showings with sold and viewed outcomes" style={css({ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center', display: 'block' })} />
+          </div>
+        </div>
+      </section>
+
+      <!-- CAPABILITY 02 — Passive Tracking -->
+      <section id="capability-02" style={css({ padding: '70px 64px', background: 'var(--bg-alt)', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center', borderTop: '1px solid var(--border)' })}>
+        <div>
+          <div style={css({ fontSize: 13, color: 'var(--muted-4)', fontFamily: "'SF Mono',monospace", marginBottom: 18 })}>02</div>
+          <h2 style={css({ fontFamily: "'Cormorant Garamond',serif", fontWeight: 600, fontSize: 38, lineHeight: 1.12 })}>{T('Passive Tracking')}</h2>
+          <p style={css({ fontSize: 15, color: 'var(--warm)', lineHeight: 1.8, marginTop: 20, maxWidth: 440 })}>
+            {T('Total visibility of thousands of pieces across storage and display, with no manual intervention.')}
+          </p>
+          <div style={css({ marginTop: 24, paddingTop: 20, borderTop: '1px solid var(--border-2)' })}>
+            <div style={css({ fontSize: 11, letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--muted-2)', marginBottom: 8 })}>{T('What it replaces')}</div>
+            <p style={css({ fontSize: 13, color: 'var(--muted-2)', lineHeight: 1.7, maxWidth: 420 })}>{T('Manual spot-checks and spreadsheets that go stale the moment a piece moves.')}</p>
+          </div>
+        </div>
+        <div style={css(imgBox)}>
+          <img src="/images/platform-locations.png" alt="Argos locations dashboard showing live inventory counts" style={css({ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center', display: 'block' })} />
+        </div>
+      </section>
+
+      <!-- CAPABILITY 03 — Runner Optimization -->
+      <section id="capability-03" style={css({ padding: '70px 64px', background: 'var(--bg)', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' })}>
+        <div class="mobile-image-last" style={css({ ...imgBox, order: 1 })}>
+          <img src="/images/platform-runner.png" alt="Argos Find a Piece search showing a sapphire ring located in Display Case 3" style={css({ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center', display: 'block' })} />
+        </div>
+        <div class="mobile-text-first" style={css({ order: 2 })}>
+          <div style={css({ fontSize: 13, color: 'var(--muted-4)', fontFamily: "'SF Mono',monospace", marginBottom: 18 })}>03</div>
+          <h2 style={css({ fontFamily: "'Cormorant Garamond',serif", fontWeight: 600, fontSize: 38, lineHeight: 1.12 })}>{T('Runner Optimization')}</h2>
+          <p style={css({ fontSize: 15, color: 'var(--warm)', lineHeight: 1.8, marginTop: 20, maxWidth: 440 })}>
+            {T('Eliminate the blind search. Direct staff with real-time data so the right piece reaches the client presentation without delay.')}
+          </p>
+          <div style={css({ marginTop: 24, paddingTop: 20, borderTop: '1px solid var(--border-2)' })}>
+            <div style={css({ fontSize: 11, letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--muted-2)', marginBottom: 8 })}>{T('What it replaces')}</div>
+            <p style={css({ fontSize: 13, color: 'var(--muted-2)', lineHeight: 1.7, maxWidth: 420 })}>{T('Staff walking the floor and back rooms searching for a piece while a client waits.')}</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CAPABILITY 04 — Operational Integrity -->
+      <section id="capability-04" style={css({ padding: '70px 64px', background: 'var(--bg-alt)', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' })}>
+        <div>
+          <div style={css({ fontSize: 13, color: 'var(--muted-4)', fontFamily: "'SF Mono',monospace", marginBottom: 18 })}>04</div>
+          <h2 style={css({ fontFamily: "'Cormorant Garamond',serif", fontWeight: 600, fontSize: 38, lineHeight: 1.12 })}>{T('Operational Integrity')}</h2>
+          <p style={css({ fontSize: 15, color: 'var(--warm)', lineHeight: 1.8, marginTop: 20, maxWidth: 440 })}>
+            {T('Supplies and consumables tracking, automated reorders, and digital case counts.')}
+          </p>
+          <div style={css({ marginTop: 24, paddingTop: 20, borderTop: '1px solid var(--border-2)' })}>
+            <div style={css({ fontSize: 11, letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--muted-2)', marginBottom: 8 })}>{T('What it replaces')}</div>
+            <p style={css({ fontSize: 13, color: 'var(--muted-2)', lineHeight: 1.7, maxWidth: 420 })}>{T('Full-day physical counts and someone noticing supplies ran out only after they did.')}</p>
+          </div>
+        </div>
+        <div style={css({ ...imgBox, aspectRatio: '1536/900' })}>
+          <img src="/images/platform-supplies.png" alt="Argos supplies and case counts showing minimum allocation alert" style={css({ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center', display: 'block' })} />
+        </div>
+      </section>
+
+      <!-- WHY IT MATTERS -->
+      <section style={css({ padding: '90px 64px', background: 'var(--bg-alt)', borderTop: '1px solid var(--border)' })}>
+        <div style={css({ fontFamily: "'Cormorant Garamond',serif", fontSize: 14, letterSpacing: '.18em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 40, textAlign: 'center' })}>
+          {T('Why it matters')}
+        </div>
+        <div style={css({ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1, background: 'var(--border)', border: '1px solid var(--border)', maxWidth: 900, marginLeft: 'auto', marginRight: 'auto' })}>
+          {[
+            ['Immediate product retrieval', 'Every piece reaches the client table immediately, no search required.'],
+            ['Total inventory awareness', 'Know the exact location and status of every piece, at all times.'],
+            ['Real-time discrepancy flags', 'Catch a missing or misplaced piece as it moves, not at the next count.'],
+            ['Customer behavior insights', 'See which pieces get presented, engaged with, and converted.'],
+          ].map(([title, body]) => (
+            <div  style={css({ background: 'var(--bg)', padding: '32px 34px' })}>
+              <h3 style={css({ fontFamily: "'Cormorant Garamond',serif", fontSize: 20, fontWeight: 600 })}>{T(title)}</h3>
+              <p style={css({ fontSize: 13.5, color: 'var(--muted)', marginTop: 10, lineHeight: 1.7 })}>{T(body)}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section style={css({ padding: '56px 64px', background: 'var(--bg)', borderTop: '1px solid var(--border)', textAlign: 'center' })}>
+        <a href={href(locale, 'faq')} class="f-orange3" style={css({ fontSize: 14, color: 'var(--text)', borderBottom: '1px solid var(--divider)', paddingBottom: 3, textDecoration: 'none' })}>
+          {T('Technical details & FAQ →')}
+        </a>
+      </section>
+
+      <PedigreeStrip locale={locale} altBackground />
+
+      <ContactForm
+        heading={T("See Argos on your own floor plan.")}
+        subheading={T("Start with a single event, or a 3-month boutique pilot.")}
+        inputBg="var(--bg)"
+        linkHref={href(locale, 'proof')}
+        linkLabel={T("See it in a real boutique")}
+        thankYouHref={href(locale, 'thankyou')}
+        labels={{
+          name: T('Name'),
+          email: T('Email'),
+          message: T('Tell us about your boutique or event'),
+          submit: T('Request a pilot'),
+          sending: T('Sending…'),
+          error: T('Something went wrong. Please email us directly at info@ptnext.com.'),
+        }}
+      />
+
+      <Footer locale={locale} />
+    </div>
