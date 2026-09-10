@@ -18,9 +18,11 @@ export const metadata: Metadata = {
 export default function FrLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr" suppressHydrationWarning>
-      <head><ThemeInit /></head>
-      <body>
+      <head>
+        <ThemeInit />
         <FontLinks />
+      </head>
+      <body>
         {children}
         <Analytics locale="fr" />
       </body>

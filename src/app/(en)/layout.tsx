@@ -18,9 +18,11 @@ export const metadata: Metadata = {
 export default function EnLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head><ThemeInit /></head>
-      <body>
+      <head>
+        <ThemeInit />
         <FontLinks />
+      </head>
+      <body>
         {children}
         <Analytics locale="en" />
       </body>
