@@ -28,7 +28,7 @@ function PilotStep({
       </div>
       <div style={{ paddingTop: 5 }}>
         <h4 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: 19, fontWeight: 600 }}>{title}</h4>
-        <p style={{ fontSize: 13, color: 'var(--muted)', lineHeight: 1.7, marginTop: 6 }}>{body}</p>
+        <p style={{ fontFamily: 'Inter,sans-serif', fontSize: 13, color: 'var(--muted)', lineHeight: 1.7, marginTop: 6 }}>{body}</p>
       </div>
     </div>
   );

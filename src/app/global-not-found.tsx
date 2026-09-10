@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { FontLinks } from '@/components/FontLinks';
 import { Analytics } from '@/components/Analytics';
+import { ThemeInit } from '@/components/ThemeInit';
 import { NotFoundPage } from '@/page-content/NotFoundPage';
+
+const FONTS_URL =
+  'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap';
 
 /*
  * Global 404 (unmatched URLs across both locales). Static hosting serves a
@@ -26,8 +29,13 @@ export const metadata: Metadata = {
 export default function GlobalNotFound() {
   return (
     <html lang="en">
+      <head>
+        <ThemeInit />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href={FONTS_URL} rel="stylesheet" />
+      </head>
       <body>
-        <FontLinks />
         <NotFoundPage locale="en" />
         <Analytics locale="en" />
       </body>
